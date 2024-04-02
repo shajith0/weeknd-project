@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+        <title>weeknd</title>
+        <link rel="shortcut icon" href="assets/img/fav.png">
+        <link rel="stylesheet" id="css-library" href="styles.css" media="all">
+        <style>
+            html,
+            body,
+            body *,
+            a, a *,
+            a:active,
+            img,img * {
+                cursor: url("assets/img/cursor/a-red.png"), auto !important;
+            }
+        </style>
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/f55a23c83c.js" crossorigin="anonymous"></script>
+
+        <script src="scripts.js"></script>
+    </head>
+    <body id="weeknd" class="tour">
+
+         <!-- Header -->
+        <header id='main-header' class="animate__animated animate__fadeIn">
+
+            <div class="nav-container">
+                <a class="logo" href="index.html">
+                    <h1>
+                        Weeknd
+                    </h1>
+                </a>
+
+                <div class="menu-content" id="menu">
+                    <!-- Nav -->
+                    <nav>
+                        <a href="/" class="nav-home">
+                            Home
+                        </a>
+                        <a href="/music" class="nav-music current" target="_blank" rel="noopener">
+                            Music
+                        </a>
+                        <a href="/merch" class="nav-merch" target="_blank" rel="noopener">
+                            Merch
+                        </a>
+                        <a href="/tour" class="nav-tour">
+                            Tour
+                        </a>
+                       
+                    </nav>
+                    <!-- End Nav -->
+
+                </div>
+            </div>
+
+        </header>
+        <!-- End Header -->
+        <main>
+            <div class="container">
+                <h1>
+                    Tour
+                </h1>
+                <div id="dates">
+                  <div class="event">
+                    <div class="bit-details">
+                        <div class="date">
+                            <span class="month"><%= concert.month %></span>
+                            <span class="day"><%= concert.day %></span>
+                        </div>
+                        <div class="loc">
+                            <span class="venue">
+                                <span><%= concert.venue %></span>
+                            </span>
+                            <span class="city">
+                                <span><%= concert.city %></span>
+                            </span>
+                        </div>
+                        <div class="tickets">
+                            <a href="/bookings/<%=concert.id %>">ticket</a>
+                          
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </main>
+
+
+        <footer>
+            <div class="rca">
+                <a href="https://www.rcarecords.com" title="RCA">
+                    <img src="assets/rca-ffffff.svg" alt="RCA Records">
+                    <span class="sr-only">RCA Records</span>
+                </a>
+                <div class="disclaimer">
+                    <p>
+                        © <span id="current_year"></span> <a href="https://www.sonymusic.com/" rel="noopener" target="_blank">Sony Music Entertainment</a>. All Rights Reserved. |
+                        <a href="https://www.sonymusic.com/terms-and-conditions/" rel="noopener" target="_blank">
+                            Terms and Conditions
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/privacy-policy/" rel="noopener" target="_blank">
+                            Privacy Policy
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/how-we-use-your-data/" rel="noopener" target="_blank">
+                            How we use your data
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/privacy-policy/#your-california-privacy-rights" rel="noopener" target="_blank">
+                            Your California Pivacy Rights
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/ccpa-contact-form/" rel="noopener" target="_blank">
+                            Do not sell my Personal Information
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/feedback/" rel="noopener" target="_blank">
+                            Send Us Feedback
+                        </a>
+                        |
+                        <a href="https://www.sonymusic.com/feedback/" rel="noopener" target="_blank">
+                            Why Music Matters
+                        </a>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <form id="doja-cat-newsletter-form-2022">
+                    <!-- Form Fields -->
+                    <div class="form-group" data-validation="Enter a valid email address">
+                        <label for="field_email_address">
+                            Email Address
+                        </label>
+                        <input class="form-control" id="field_email_address" name="field_email_address" type="email" required placeholder="Email">
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-default">SUBMIT</button>
+                </form>
+
+
+            </div>
+        </footer>
+
+        <div class="video-bg-container tour-bg">
+            <video autoplay muted loop preload playsinline poster="assets/video/tourbg.webp">
+                <source src="assets/video/tourbg.webm" type="video/webm">
+                <source src="assets/video/tourbg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </body>
+
+</html>
+    

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <title>Weeknd</title>
+        <link rel="shortcut icon" href="assets/img/fav.png">
+        <link rel="stylesheet" id="css-library" href="styles.css" media="all">
+        <!-- Fontawesome -->
+        <script src="https://kit.fontawesome.com/f55a23c83c.js" crossorigin="anonymous"></script>
+        <script src="scripts.js"></script>
+    </head>
+
+    <body id="weeknd" class="home" style="background-color: #0c0a0d; color: white;">
+        <!-- Header -->
+        <header id='main-header' class="animate__animated animate__fadeIn">
+
+            <div class="nav-container">
+
+                <a class="logo" href="/">
+                    <h1>
+                        Weeknd
+                    </h1>
+                </a>
+
+                <div class="menu-content" id="menu">
+                    <!-- Nav -->
+                    <nav>
+                        <a href="/" class="nav-home current">
+                            Home
+                        </a>
+                        <a href="/music" class="nav-music" target="_blank" rel="noopener">
+                            Music
+                        </a>
+                        <a href="/merch" class="nav-merch" target="_blank" rel="noopener">
+                            Merch
+                        </a>
+                        <a href="/concert" class="nav-tour">
+                            Tour
+                        </a>
+                    </nav>
+                    <!-- End Nav -->
+
+                </div>
+            </div>
+
+        </header>
+        <!-- End Header -->
+
+        <main>
+            
+            <div class="cta-container">
+                <div class="scarlet"></div>
+                <div class="cta-block">
+                    <a href="https://open.spotify.com/album/4yP0hdKOZPNshxUOjY0cZj?si=iQ-pzCeEROGmK-G-IP3quw" class="btn btn-default" target="_blank" rel="noopener">    
+                        Listen Now
+                    </a>
+                </div>
+                <p>
+                    By connecting, you agree to pre-save and follow on Spotify, or pre-add on Apple, and receive news from Weekndt and Sony Music. For more information on how we use your data, please see the links below.
+                </p>
+            </div>
+
+        </main>
+        
+        <footer>
+            <div class="rca">
+                <a href="https://www.rcarecords.com" title="RCA" >
+                   
+                    <span class="sr-only">RCA Records</span>
+                </a>
+                <div class="disclaimer">
+                    <p>
+                        © <span id="current_year"></span> <a href="" rel="noopener" target="_blank">Sony Music Entertainment</a>. All Rights Reserved. |
+                        <a href="" rel="noopener" target="_blank">
+                            Terms and Conditions
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            Privacy Policy
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            How we use your data
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            Your California Pivacy Rights
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            Do not sell my Personal Information
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            Send Us Feedback
+                        </a>
+                        |
+                        <a href="" rel="noopener" target="_blank">
+                            Why Music Matters
+                        </a>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <form id="doja-cat-newsletter-form-2022">
+                    <input type="hidden" name="js_url" id="js_url" value="https://subs.sonymusicfans.com/submit">
+                    <input type="hidden" name="ae_segment_id" id="ae_segment_id" value="1611678">
+                    <input type="hidden" name="ae_brand_id" id="ae_brand_id" value="3443735">
+                    <input type="hidden" name="ae_activities" id="ae_activities" value='{"actions":{"formsubmission":96478,"secondaryformsubmission":0},"mailing_list_optins":{"a0S61000001YplPEAS":96482}}'>
+                    <input type="hidden" name="ae" id="ae" value="db1275a443487a733c0a9127248d15de1f9e914d0e58fb57d1e3dbf16b7d6167">
+                    <input type="hidden" name="form" value="210954">
+                    <!-- Form Fields -->
+                    <div class="form-group" data-validation="Enter a valid email address">
+                        <label for="field_email_address">
+                            Email Address
+                        </label>
+                        <input class="form-control" id="field_email_address" name="field_email_address" type="email" required placeholder="Email">
+                    </div>
+                    <div class="input-group hidden">
+                        <div class="checkbox">
+                            <label for="mailing-list-id[0]">
+                                <input type="hidden" id="mailing-list-id[0]" name="mailing-list-id[0]" value="a0S61000001YplPEAS">
+                                <p>I'd like to subscribe to the Doja Cat newsletter</p>						
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+
+            </div>
+        </footer>
+        
+        <div class="video-bg-container demons" id="videoOverlay">
+            <button onclick="hideVideo()" id="hideVideo">
+                Enter
+            </button>
+            <button onclick="toggleVideoSound()" id="toggleVideoSound" class="muted">
+                <span class="sr-only">
+                    Unmute
+                </span>
+            </button>
+            <video id="demons-video" autoplay muted preload playsinline poster="assets/video/demons.webp">
+                <source src="assets/video/videoplayback.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </body>
+
+</html>
+

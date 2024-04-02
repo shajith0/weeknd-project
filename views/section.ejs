@@ -1,0 +1,344 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert booking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Buda:wght@300&family=Edu+SA+Beginner:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .img-container>img {
+        width: 200px;
+        height: 250px;
+        object-fit: contain;
+        margin: 25px 0px 0px 20px;
+    }
+
+
+
+    .loc-container>img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        margin-top: 5px;
+        margin-bottom: 5px;
+       // position:relative;
+        right: 30px;
+        top: 45px;
+
+    }
+
+    .date-container>img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        opacity:0.8;
+       // position:relative;
+        right: 30px;
+        top: 35px;
+    }
+
+    .card-container{
+        background-color: rgba(57, 52, 52, 0.844);
+        width: 60%;
+        height: 300px;
+        //border-radius: 10px;
+        margin-top: 0px;
+        display: flex;
+    }
+
+    .artist-name > h1{
+        letter-spacing: 1px;
+        font-family: "Buda";
+        font-size: 40px;
+        margin-left: 20px;
+        margin-bottom:0px;
+    }
+
+    .tour-name > h4{
+        font-family: "Tenali Ramakrishna";
+        font-weight:100;
+        font-style: normal;
+        margin-left: 20px;
+        font-size: 24px;
+        margin-top:0px;
+        //  position:relative;
+        top: 60px;
+        right: 260px
+    }
+
+    .first-container {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+
+    }
+
+    .loc-container {
+        // position:relative;
+        top: 100px;
+        right: 90px;
+        margin-left: 80px;
+         margin-bottom:60px;
+    }
+
+    .loc-details > h1,h3{
+        margin: 3px;
+        font-weight: normal;
+        font-style: normal;
+       // letter-spacing: 1px;
+        font-family: Roboto;
+
+    }
+
+    .loc-details>h1 {
+        font-size: 20px;
+    }
+
+    .loc-details>h3 {
+        font-size: 15px;
+    }
+
+    .date-container {
+        font-family: Roboto;
+        margin: 3px;
+        font-weight: normal;
+        font-style: normal;
+       // letter-spacing: 1px;
+       margin-left: 200px;
+    }
+
+    .date-details>h1 {
+        font-family: Roboto;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 20px;
+        margin: 3px;
+       
+    }
+
+    .date-details>h3 {
+        font-family: Roboto;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 15px;
+        margin: 3px;
+    }
+
+    .center-text{
+        display:flex;
+    }
+
+    .right{
+        display:flex;
+        flex-basis: 350px;
+        justify-content: flex-end;
+    }
+
+        button {
+            background-color:black;
+            color: white;
+            padding: 10px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin:10px 0 0 0;
+        }
+
+        button:hover {
+            background-color: #e9efe9;
+            color:black;
+        }
+
+        select {
+            width: 30%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        input {
+            width: 29%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .second-container{
+            font-family: Arial, sans-serif;
+            padding: 40px;
+
+        }
+
+        
+</style>
+
+<body>
+    <div class="first-container">
+
+        <div class="card-container">
+
+            <div class="left">
+
+                <div class="top-text">
+                    <div class="artist-name">
+                        <h1>THE WEEKND</h1>
+                    </div>
+    
+                    <div class="tour-name">
+                        <h4>After hours till Dawn</h4>
+                    </div>
+                </div>
+    
+                <div class="center-text">
+                    <div class="loc-container">
+                        <img src="./icons8-location-64.png" alt="location" />
+                        <div class="loc-details">
+                            <h1>Empire Polo Club</h1>
+                            <h3>81800 51st Ave</h3>
+                            <h3>Indio, CA 92201</h3>
+                        </div>
+                    </div>
+    
+                    <div class="date-container">
+                        <img src="./icons8-calender-32.png" alt="calender" />
+                        <div class="date-details">
+                            <h1> April 14,2024</h1>
+                            <h3>1:00 PM PDT</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right">
+                <div class="img-container">
+                    <img src="./sofi.jpg" alt="sofi poster" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="section">
+            <form action="/billing/<%= concert.id %>/confirm" method="POST" id="booking-form">
+                <label for="section">Select Section:</label>
+                <select id="section" name="section">
+                    <% sections.forEach(section=> { %>
+                        <% if (section.is_available && section.capacity> 1) { %>
+                            <option value="<%= section.id %>" data-price="<%= section.price %>">
+                                <%= section.section %> - Price: $<%= section.price %> 
+                            </option>
+                        <% } else { %>
+                            <option value="<%= section.id %>" disabled>
+                                <%= section.section %> (Not Available)
+                            </option>
+                        <% } %>
+                    <% }) %>
+                </select>
+                <br>
+                <label for="tickets">Number of Seats (1-99):</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="99" required>
+                <br>
+                <div id="total-price">Total Price: 0.00</div> 
+                <button  id="rzp-button1">Book Seats</button>
+            </form>
+           
+        </div>
+    </div>
+      
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sectionSelect = document.getElementById('section');
+            const ticketsInput = document.getElementById('tickets');
+            const totalPriceContainer = document.getElementById('total-price');
+            const bookingForm = document.getElementById('booking-form');
+
+            // Function to calculate total price
+            function calculateTotalPrice() {
+                const selectedOption = sectionSelect.options[sectionSelect.selectedIndex];
+                const price = parseFloat(selectedOption.dataset.price);
+                const numSeats = parseInt(ticketsInput.value);
+                const totalPrice = price * numSeats;
+                totalPriceContainer.textContent = `Total Price: ${totalPrice.toFixed(2)}`;
+                
+                // Assign price to the global variable
+                window.price = totalPrice;
+            }
+
+            // Calculate total price when section or number of tickets change
+            sectionSelect.addEventListener('change', calculateTotalPrice);
+            ticketsInput.addEventListener('change', calculateTotalPrice);
+
+            // Calculate total price on form submission as well
+            bookingForm.addEventListener('submit', calculateTotalPrice);
+        });
+
+        // Razorpay integration
+        document.getElementById('rzp-button1').addEventListener('click', function(e) {
+            if (typeof window.price !== 'undefined') {
+                var options = {
+                    "key": "rzp_test_nYZaRdZ5Odva1q",
+                    "amount": window.price * 100,
+                    "currency": "INR",
+                    "name": "WEEKND",
+                    "description": "Payment for Test",
+                    "image": "img/logos.png",
+                    "handler": function (response) {
+                        alert('Payment Successful');
+                        window.location.href = "/order";
+                    },
+                    "prefill": {
+                        "name": "Test User",
+                        "email": "test@user.com",
+                        "contact": "9999999999"
+                    },
+                    "notes": {
+                        "address": "Test Address"
+                    },
+                    "theme": {
+                        "color": "#000000"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+                e.preventDefault();
+            } else {
+                console.log('Price is not calculated yet.');
+            }
+        });
+    </script>
+</body>
+
+</html>

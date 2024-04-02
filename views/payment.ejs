@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        .nav-container{
+            height:50px;
+           // border-bottom: 0.1px solid rgb(147, 140, 140);
+           box-shadow: 0px 0.1px 0px 0px black;
+        }
+        @import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}
+
+.shipping-container {
+  //max-width: 40rem;
+  width:30%
+  padding: 0;
+  margin: 0 auto;
+ // height: 100vh;
+  padding-top: 30px;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+
+.main-container{
+    display:flex;
+    justify-content:space-around;
+
+}
+
+.right{
+    width:30%;
+}
+
+.pimage > img{
+    width: 50px;
+    height:50px;
+    object-fit: contain;
+}
+
+.product{
+    padding-top: 55px;
+    
+}
+
+.row1{
+    display:flex;
+}
+
+.pprice{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top:0;
+
+}
+
+.pname{
+    width:100%;
+    margin-left:15px;
+}
+
+.row2{
+    display:flex;
+}
+
+.row3{
+    display:flex;
+}
+.row4{
+    display:flex;
+}
+
+.row4>h1{
+    margin-top:0;
+
+}
+
+.row2>p{
+    margin-top: 40px;
+    margin-bottom:0;
+}
+
+.pprice>h4{
+    margin-top: 40px;
+    margin-bottom:0;
+}
+
+.pprice>h1{
+    margin-top:0;
+}
+
+.nav-container>h1{
+        margin-left:100px;
+        margin-top:50px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="whole-container">
+        <div class="nav-container">
+            <h1>THE WEEKND</h1>
+
+        </div>
+        <div class="main-container">
+            <div class="left">
+                <div class="shipping-container" style="width: 500px;">
+                    <h1>Shipping</h1>
+                    <p>Please enter your shipping details.</p>
+                    <hr />
+                    <div class="form">
+                        <form action="/billing/<%=product.id%>" method="post">
+                            <% if (locals.shippingDetails) { %>
+                                <!-- Display existing shipping details if available -->
+                                <div class="field">
+                                    <label class="field__label" for="email">Email</label>
+                                    <input class="field__input" type="text" id="email" name="email" value="<%= shippingDetails.email %>" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="name">Name</label>
+                                    <input class="field__input" type="text" id="name" name="name" value="<%= shippingDetails.name %>" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="address">Address</label>
+                                    <input class="field__input" type="text" id="address" name="address" value="<%= shippingDetails.address %>" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="phone">Phone</label>
+                                    <input class="field__input" type="text" id="phone" name="phone" value="<%= shippingDetails.phone %>" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="city">City</label>
+                                    <input class="field__input" type="text" id="city" name="city" value="<%= shippingDetails.city %>" required>
+                                </div>
+                            <% } else { %>
+                                <!-- Display form fields for entering new shipping details -->
+                                <div class="field">
+                                    <label class="field__label" for="email">Email</label>
+                                    <input class="field__input" type="text" id="email" name="email" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="name">Name</label>
+                                    <input class="field__input" type="text" id="name" name="name" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="address">Address</label>
+                                    <input class="field__input" type="text" id="address" name="address" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="phone">Phone</label>
+                                    <input class="field__input" type="text" id="phone" name="phone" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="city">City</label>
+                                    <input class="field__input" type="text" id="city" name="city" required>
+                                </div>
+                            <% } %>
+                        </form>
+                    </div>
+                    <hr>
+                    <button class="button"  id="rzp-button1">PAY NOW</button>
+                  </div>
+
+            </div>
+            <div class="right">
+                <div class="product">
+                    <div class="row1">
+                        <div class="pimage">
+                           <img src="<%= product.first_img_url %>" alt="" srcset=""> 
+                        </div>
+                        <div class="pname">
+                            <p><%= product.name %></p>
+                        </div>
+                        <div class="pprice">
+                            <p><%= product.price %></p> 
+                        </div>  
+                    </div>
+                    <div class="row2">
+                        <p>Subtotal</p>
+                        <div class="pprice">
+                            <h4><%=product.price%></h4>
+
+                        </div>
+                        
+                    </div>
+                    <div class="row3">
+                        <p>Shipping</p>
+                        <div class="pprice">
+                            <p>Enter shippimg address</p>
+
+                        </div>
+                        
+                    </div>
+                    <div class="row4">
+                        <h1>Total</h1>
+                        <div class="pprice">
+                            <h1><%=product.price%></h1>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+		const price = <%= product.price %>;
+        var options = {
+            "key": "rzp_test_nYZaRdZ5Odva1q",
+            "amount": price*100,
+            "currency": "INR",
+            "name": "WEEKND",
+            "description": "Payment for Test",
+            "image": "img/logos.png",
+            "handler": function (response) {
+                alert('Payment Successful');
+                console.log(response);
+				window.location.href = "/order";
+            },
+            "prefill": {
+                "name": "Test User",
+                "email": "test@user.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Test Address"
+            },
+            "theme": {
+                "color": "#000000"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e) {
+            rzp1.open();
+            e.preventDefault();
+        }
+		
+    </script>
+	<script>
+		if (transferredAmount !== null) {
+		  console.log('Transferred Amount:', checkoutAmount);
+		  localStorage.removeItem('checkoutAmount');
+		} else {
+		  console.log('No transferred amount found.');
+		}
+	  </script>
+
+</body>
+</html>

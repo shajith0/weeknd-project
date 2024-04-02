@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
+<body>
+    <a href="/checkout/<%= product.id %>" style="text-decoration: none; color: inherit;">
+        <div class="Product" style="text-align: center;">
+            <div class="img">
+                <img src="<%= product.first_img_url %>"  alt="" class="interactable">
+            </div>
+            <h5 class="item name"><%= product.name %> - $<span><%= product.price %></span></h5>
+        </div>
+    </a>
+</body>
+<script>
+ 
+</script>
+</html>
+
+

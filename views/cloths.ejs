@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: SuisseIntl;
+      font-style: normal;
+      font-weight: 500;
+      src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-Medium.woff2) format("woff2"), url(SuisseIntl-Medium.woff) format("woff"), url(./fonts/SuisseIntl-Medium.svg#SuisseIntl-Medium) format("svg");
+    }
+
+    @font-face {
+      font-family: SuisseIntl;
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-Regular.woff2) format("woff2"), url(SuisseIntl-Regular.woff) format("woff"), url(./fonts/SuisseIntl-Regular.svg#SuisseIntl-Regular) format("svg");
+    }
+
+    @font-face {
+      font-family: SuisseIntl;
+      font-style: normal;
+      font-weight: 700;
+      src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-SemiBold.woff2) format("woff2"), url(SuisseIntl-SemiBold.woff) format("woff"), url(./fonts/SuisseIntl-SemiBold.svg#SuisseIntl-SemiBold) format("svg");
+    }
+
+    body {
+      background-color: black;
+      font-family: SuisseIntl, sans-serif;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      /* Allow items to wrap to the next line */
+      padding: 70px;
+      /* Distribute items along the main axis with space between them */
+    }
+    .products > a{
+      width: 500px;
+      margin-right: 30px;
+    }
+    .img>img{
+      width: 450px;
+      height: 540px;
+    }  
+    </style>
+</head>
+
+<body>
+
+  <%- include('partials/header.ejs') %>
+    <div class="products">
+      <div class="products" style="margin-top: 10px;">
+        <% for (let i=0; i < products.length; i++) { %>
+          <%- include('product.ejs', { product: products[i] }) %>
+            <% } %>
+      </div>
+    </div>
+</body>
+
+</html>

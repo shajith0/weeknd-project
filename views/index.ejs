@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XO STORE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  @font-face {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-Medium.woff2) format("woff2"), url(SuisseIntl-Medium.woff) format("woff"), url(./fonts/SuisseIntl-Medium.svg#SuisseIntl-Medium) format("svg");
+  }
+
+  @font-face {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    src: url(/assets/./fonts/SuisseIntl-Regular.woff2) format("woff2"), url(SuisseIntl-Regular.woff) format("woff"), url(./fonts/SuisseIntl-Regular.svg#SuisseIntl-Regular) format("svg");
+  }
+
+  @font-face {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 700;
+    src: url(/assets/./fonts/SuisseIntl-SemiBold.woff2) format("woff2"), url(SuisseIntl-SemiBold.woff) format("woff"), url(./fonts/SuisseIntl-SemiBold.svg#SuisseIntl-SemiBold) format("svg");
+  }
+
+  body {
+    line-height: 1.2;
+    color: rgb(255 255 255/var(--tw-text-opacity));
+    font-family: SuisseIntl, sans-serif;
+    font-size: .75rem;
+    font-weight: 400;
+  }
+</style>
+
+<body>
+
+  <div class="main container" style="height: 100%;">
+    <%- include('partials/header.ejs') %>
+      <div class="products" style="margin-top: 35px; flex-direction: column;">
+        <div class="products">
+
+          <%- include('product.ejs', { product: products[1] }) %>
+            <%- include('product.ejs', { product: products[2] }) %>
+              <%- include('product.ejs', { product: products[3] }) %>
+        </div>
+        <div class="products">
+
+          <%- include('product.ejs', { product: products[20] }) %>
+            <%- include('product.ejs', { product: products[22] }) %>
+              <%- include('product.ejs', { product: products[21] }) %>
+        </div>
+      </div>
+
+  </div>
+ 
+</body>
+<script src="script.js"></script>
+
+</html>

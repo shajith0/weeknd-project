@@ -1,0 +1,373 @@
+<!-- checkout.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<title>checkout/<%= product.name %>
+</title>
+
+<head>
+    <!-- Your head content here -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: SuisseIntl;
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-Medium.woff2) format("woff2"), url(SuisseIntl-Medium.woff) format("woff"), url(./fonts/SuisseIntl-Medium.svg#SuisseIntl-Medium) format("svg");
+        }
+
+        @font-face {
+            font-family: SuisseIntl;
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-Regular.woff2) format("woff2"), url(SuisseIntl-Regular.woff) format("woff"), url(./fonts/SuisseIntl-Regular.svg#SuisseIntl-Regular) format("svg");
+        }
+
+        @font-face {
+            font-family: SuisseIntl;
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://store.dojacat.com/cdn/shop/t/2/assets/./fonts/SuisseIntl-SemiBold.woff2) format("woff2"), url(SuisseIntl-SemiBold.woff) format("woff"), url(./fonts/SuisseIntl-SemiBold.svg#SuisseIntl-SemiBold) format("svg");
+        }
+
+        body {
+            background-color: black;
+            font-family: SuisseIntl, sans-serif;
+            color: white;
+        }
+
+        .checkout {
+            display: flex;
+            width: 100%;
+        }
+
+        .name-price {
+            display: flex;
+            flex: 1;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .size-cart {
+            display: flex;
+        }
+
+        .product-image {
+            flex: 1;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .size-button {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            width: 55px;
+            /* Set a fixed width for the circular button */
+            height: 55px;
+            /* Set a fixed height for the circular button */
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .size-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .size-button:active {
+            background-color: white;
+            color: black;
+        }
+
+        .add-to-cart-button {
+            background-color: rgb(243, 14, 14);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .add-to-cart-button:hover:enabled {
+            background-color: #f01111;
+            /* Change the color on hover */
+            color: white;
+        }
+
+        .add-to-cart-button:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            /* Initially off-screen, set to the negative value of the desired width */
+            width: 400px;
+            height: 100%;
+            background-color: black;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-menu-content {
+            position: absolute;
+            top: 0;
+            padding: 20px;
+            padding-top: 0;
+
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline;
+        }
+
+        .checkout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            overflow: hidden;
+            /* Hide overflow for the entire checkout container */
+        }
+
+        .scrollable-image {
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+            width: 40%;
+            flex: 1;
+            margin-left: 45px;
+        }
+
+        .product-image {
+            width: 100%;
+        }
+
+        .product-details {
+            width: 50%;
+            /* Adjust width as needed */
+            padding: 0 20px;
+            /* Add padding as needed */
+            margin-left: 25px;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .size-cart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .scrollable-image {
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .product-image {
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img {
+            display: block;
+            width: 100%;
+            background-color: white;
+        }
+
+        .checkout-btn {
+            display: flex;
+            width: 95%;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            background: black;
+            color: white;
+            font-size: 20px;
+            border: 1px solid;
+        }
+        .checkout-btn:hover{
+            background: white;
+            color: black;
+        }
+        .size-selector{
+            flex : 1;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <div class="checkout" style="margin-top: 10px;">
+            <div class="scrollable-image" style="overflow: hidden; height: 100vh;">
+                <div class="product-image">
+                    <img src="/<%= product.first_img_url %>" alt="Product Image"
+                        style="width: 95%; background-color: white;">
+                    <img src="/<%= product.second_img_url %>" alt="Product Image"
+                        style="width: 95%; background-color: white;">
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="name-price" style="flex-direction: column;opacity: 86%;margin-top: 43px;font-size: 14px;">
+                    <h2 style="flex: 1;">
+                        <%= product.name %>
+                    </h2>
+                    <h2 style="margin: 0;">
+                        <%= product.price %>
+                    </h2>
+                </div>
+                <% if (product.category !== 'Music') { %>
+                <h3>SIZE</h3>
+                <div class="size-cart">
+                    <div class="size-selector">
+                        <button class="size-button" onclick="selectSize(this, 'S')">S</button>
+                        <button class="size-button" onclick="selectSize(this, 'M')">M</button>
+                        <button class="size-button" onclick="selectSize(this, 'L')">L</button>
+                        <button class="size-button" onclick="selectSize(this, 'XL')" style="width: 70px;">XL</button>
+                    </div>
+                    <% }else{ %>
+                        <h3>SIZE</h3>
+                        <div class="size-cart">
+                        <div class="size-selector">
+                            <button class="size-button" style="width: 140px;" onclick="selectSize(this, 'cd')">cd</button>
+                            <button class="size-button"  style="width: 140px;"onclick="selectSize(this, 'vinly')">vinly</button>
+                         </div>
+
+                  <%  } %>
+                    <div style="flex: 1;">
+                        <button class="add-to-cart-button" id="addToCartBtn" onclick="addToCart()" disabled
+                            style="height: 60px; font-size: 20px; width: 200px;">Add to Cart</button>
+                    </div>
+                </div>
+
+                <p><strong>Product Description</strong></p>
+                <h2 style="font-size: 14px;">
+                    <%= product.description %>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Add more checkout-related information here -->
+        <div class="side-menu" id="sideMenu">
+            <span class="close-btn" onclick="closeSideMenu()">&times;</span>
+            <div class="side-menu-content">
+                <h2>YOUR CART</h2>
+            </div>
+            <div class="detail" style="display: flex;">
+                <div style="    width: 35%;
+                text-align: center;
+            ">
+                    <img src="/<%= product.first_img_url %>" style="width: 70%;">
+                </div>
+                <div>
+                    <p>
+                        <%= product.name %>
+                    </p>
+                    <form id="checkoutForm" action="/processOrder" method="post">
+                        <!-- Your existing form fields and content -->
+
+                        <!-- Add a hidden input for the selected size -->
+                        <input type="hidden" name="selectedSize" id="selectedSizeInput" value="">
+                    </form>
+
+                    <p><span id="selectedSizeDisplay">
+                            <%= size %>
+                        </span></p>
+                </div>
+            </div>
+
+            <div class="check" style="margin-top: 370px;">
+                <div class="price-details" style="display: flex; ">
+                    <h3 style="flex: 1; margin-top: 15px;margin-bottom: 15px ;">total</h3>
+                    <h3 style=" margin-top: 15px;margin-bottom: 15px">
+                        <%= product.price %>
+                    </h3>
+                </div>
+                <a href="/billing/<%= product.id %>"
+                    style="display: flex; justify-content: center; margin-bottom: 5px;">
+                    <button class="checkout-btn">Checkout</button>
+                </a>
+            </div>
+            <!-- Add more product details as needed -->
+
+
+        </div>
+        </div>
+</body>
+
+<script>
+    window.addEventListener('scroll', revealHiddenContent);
+
+    function revealHiddenContent() {
+        const scrollY = window.scrollY;
+        const scrollableImage = document.querySelector('.scrollable-image');
+        const productImage = document.querySelector('.product-image');
+        const windowHeight = window.innerHeight;
+
+        // Calculate how much of the scrollable area has been scrolled
+        const scrollableAreaScrolled = (scrollY / (document.body.scrollHeight - windowHeight)) * 100;
+
+        // Calculate the amount to translate the product image
+        const translateAmount = (scrollableAreaScrolled / 100) * (productImage.offsetHeight - windowHeight);
+
+        // Apply transform to reveal hidden content
+        productImage.style.transform = `translateY(-${translateAmount}px)`;
+    }
+
+
+    let selectedSize = null
+
+    function selectSize(sizeButton) {
+        // Remove the 'selected' class from all size buttons
+        const sizeButtons = document.getElementsByClassName('size-button');
+        for (let i = 0; i < sizeButtons.length; i++) {
+            sizeButtons[i].classList.remove('selected');
+        }
+
+        // Add the 'selected' class to the clicked button
+        sizeButton.classList.add('selected');
+
+        // Store the selected size
+        selectedSize = sizeButton.textContent;
+
+        document.getElementById('selectedSizeInput').value = selectedSize;
+        // Update the displayed size in the side menu
+        document.getElementById('selectedSizeDisplay').textContent = selectedSize;
+
+        // Enable the add to cart button
+        enableAddToCartButton();
+    }
+
+    function enableAddToCartButton() {
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        if (selectedSize) {
+            addToCartBtn.removeAttribute('disabled');
+        } else {
+            addToCartBtn.setAttribute('disabled', 'disabled');
+        }
+    }
+    
+
+    function addToCart() {
+        // Implement your add to cart logic here
+        document.getElementById('sideMenu').style.right = '0';
+    }
+    function closeSideMenu() {
+        // Hide the side menu
+        document.getElementById('sideMenu').style.right = '-400px';
+    }
+</script>
+
+</html>
