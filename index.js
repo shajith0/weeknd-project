@@ -179,7 +179,7 @@ app.get('/billing/:productId', async (req, res) => {
           product: productDetails,
           size: selectedSize,
         };
-        res.render('billing.ejs', templateData);
+        res.render('payment.ejs', templateData);
       }
     } catch (error) {
       console.error('Error checking shipping information:', error);
@@ -307,14 +307,14 @@ app.post('/register', async (req, res) => {
     const checkResult = await db.query('SELECT * FROM users WHERE email = $1', [email]);
 
     if (checkResult.rows.length > 0) {
-      res.send('Email already exists. Try logging in.');
+      res.redirect('/login');
     } else {
       bcrypt.hash(password, saltRounds, async (err, hash) => {
         if (err) {
           console.error('Error hashing password:', err);
         } else {
           await db.query('INSERT INTO users (email, password) VALUES ($1, $2)', [email, hash]);
-          res.redirect('/merch');
+          res.redirect('/login');
         }
       });
     }
